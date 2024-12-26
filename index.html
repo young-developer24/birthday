@@ -305,16 +305,22 @@
       //---------Execution--------
       initConfetti();
       render();
+document.addEventListener("touchstart", initConfetti); // For touch events
+resizeCanvas(); // Ensure canvas is resized for different screen orientations
 
       //----------Resize----------
       window.addEventListener("resize", function () {
         resizeCanvas();
       });
+window.addEventListener("click", initConfetti);
+window.addEventListener("touchstart", initConfetti);
 
       //------------Click------------
       window.addEventListener("click", function () {
         initConfetti();
       });
+      window.addEventListener("orientationchange", resizeCanvas);
+
     </script>
   </body>
 </html>
